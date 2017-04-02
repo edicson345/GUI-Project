@@ -1,0 +1,63 @@
+# depslib dependency file v1.0
+1491164218 source:/home/ed/Documents/GUI-Project/GameLogic/main.cpp
+	<iostream>
+	<Arena.h>
+
+1491164187 source:/home/ed/Documents/GUI-Project/GameLogic/src/Arena.cpp
+	"Arena.h"
+
+1491164187 /home/ed/Documents/GUI-Project/GameLogic/include/Arena.h
+	<vector>
+	<BlackHat.h>
+	<Actor.h>
+	<Cell.h>
+	<iostream>
+	<time.h>
+	<stdlib.h>
+
+1491156275 /home/ed/Documents/GUI-Project/GameLogic/include/BlackHat.h
+	<string>
+	<Cell.h>
+	<iostream>
+
+1491156298 /home/ed/Documents/GUI-Project/GameLogic/include/Cell.h
+	<iostream>
+	<Object.h>
+
+1490558428 source:/home/ed/Documents/GUI-Project/GameLogic/src/Bakery.cpp
+	"Bakery.h"
+
+1490558428 /home/ed/Documents/GUI-Project/GameLogic/include/Bakery.h
+
+1491088619 source:/home/ed/Documents/GUI-Project/GameLogic/src/BlackHat.cpp
+	"BlackHat.h"
+
+1491161311 source:/home/ed/Documents/GUI-Project/GameLogic/src/Cell.cpp
+	"Cell.h"
+
+1490558405 source:/home/ed/Documents/GUI-Project/GameLogic/src/Cop.cpp
+	"Cop.h"
+
+1490558404 /home/ed/Documents/GUI-Project/GameLogic/include/Cop.h
+
+1490558377 source:/home/ed/Documents/GUI-Project/GameLogic/src/WhiteHat.cpp
+	"WhiteHat.h"
+
+1490558377 /home/ed/Documents/GUI-Project/GameLogic/include/WhiteHat.h
+
+1491160008 source:/home/ed/Documents/GUI-Project/GameLogic/src/Actor.cpp
+	"Actor.h"
+
+1491159998 /home/ed/Documents/GUI-Project/GameLogic/include/Actor.h
+	<string>
+	"Object.h"
+	<iostream>
+
+1491161212 /home/ed/Documents/GUI-Project/GameLogic/include/Object.h
+	<stdlib.h>
+	<time.h>
+	<Object.h>
+
+1491161231 source:/home/ed/Documents/GUI-Project/GameLogic/src/Object.cpp
+	"Object.h"
+
