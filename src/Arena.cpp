@@ -35,11 +35,102 @@ void Arena::placeBlackHats(int numToPlace)
         y = rand() % dimensionY;
         z = rand() % dimensionZ;
 
-        cells[x][y][z].placeUnit(new Actor(x,y,z, "BlackHat"));
-        Object *o = cells[x][y][z].getUnit();
-        static_cast<Actor*>(o)->getPosition();
+        if(cells[x][y][z].isEmpty())
+        {
+            cells[x][y][z].placeUnit(new Actor(x,y,z, "BlackHat"));
+            Object *o = cells[x][y][z].getUnit();
+            blackHatList.push_back(static_cast<Actor*>(o));
+        }
+        else
+        {
+            x = rand() % dimensionX;
+            y = rand() % dimensionY;
+            z = rand() % dimensionZ;
+
+            cells[x][y][z].placeUnit(new Actor(x,y,z, "BlackHat"));
+            Object *o = cells[x][y][z].getUnit();
+            whiteHatList.push_back(static_cast<Actor*>(o));
+        }
     }
 
+}
+
+void Arena::placeWhiteHats(int numToPlace)
+{
+    whiteHats = numToPlace;
+    int x,y,z;
+
+    for(int i = 0; i < whiteHats; i++)
+    {
+
+        x = rand() % dimensionX;
+        y = rand() % dimensionY;
+        z = rand() % dimensionZ;
+
+        if(cells[x][y][z].isEmpty())
+        {
+            cells[x][y][z].placeUnit(new Actor(x,y,z, "WhiteHat"));
+            Object *o = cells[x][y][z].getUnit();
+            whiteHatList.push_back(static_cast<Actor*>(o));
+        }
+        else
+        {
+            x = rand() % dimensionX;
+            y = rand() % dimensionY;
+            z = rand() % dimensionZ;
+
+            cells[x][y][z].placeUnit(new Actor(x,y,z, "WhiteHat"));
+            Object *o = cells[x][y][z].getUnit();
+            whiteHatList.push_back(static_cast<Actor*>(o));
+        }
+    }
+}
+
+void Arena::printAllLocations()
+{
+    for(int i = 0; i < blackHatList.size(); i++)
+        allActors.push_back(blackHatList[i]);
+    for(int i = 0; i < whiteHatList.size(); i++)
+        allActors.push_back(whiteHatList[i]);
+    for(int i = 0; i < copList.size(); i++)
+        allActors.push_back(copList[i]);
+
+    std::random_shuffle(allActors.begin(), allActors.end());
+
+    for(int i = 0; i < allActors.size(); i++)
+        allActors[i]->getPosition();
+
+}
+
+void Arena::placeCops(int numToPlace)
+{
+    cops = numToPlace;
+    int x,y,z;
+
+    for(int i = 0; i < cops; i++)
+    {
+        x = rand() % dimensionX;
+        y = rand() % dimensionY;
+        z = rand() % dimensionZ;
+
+        if(cells[x][y][z].isEmpty())
+        {
+            cells[x][y][z].placeUnit(new Actor(x,y,z, "Cop"));
+            Object *o = cells[x][y][z].getUnit();
+            copList.push_back(static_cast<Actor*>(o));
+        }
+        else
+        {
+            x = rand() % dimensionX;
+            y = rand() % dimensionY;
+            z = rand() % dimensionZ;
+
+            cells[x][y][z].placeUnit(new Actor(x,y,z, "Cop"));
+            Object *o = cells[x][y][z].getUnit();
+            whiteHatList.push_back(static_cast<Actor*>(o));
+        }
+
+    }
 }
 
 void Arena::emptyArena()

@@ -21,7 +21,7 @@ class Cell
 
     private:
         int x, y;
-        bool vacant;
+        bool vacant = true;
         Object* unit;
 };
 

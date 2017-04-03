@@ -20,7 +20,7 @@ void Actor::getPosition()
     for(int i = 0; i < 3; i++)
         cout << position[i] << " ";
 
-    cout << endl;
+    cout << ID << endl;
 }
 
 Actor::~Actor()
