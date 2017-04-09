@@ -27,7 +27,7 @@ void Object::animate()
 {
     srand(time(NULL));
 
-    int direction = rand() % 4 + 1;
+    int direction = rand() % 4;
 
     switch(direction)
     {

@@ -1,12 +1,13 @@
 # depslib dependency file v1.0
-1491170011 source:/home/ed/Documents/GUI-Project/GameLogic/main.cpp
+1491771471 source:/home/ed/Documents/GUI-Project/GameLogic/main.cpp
 	<iostream>
 	<Arena.h>
 
-1491182623 source:/home/ed/Documents/GUI-Project/GameLogic/src/Arena.cpp
+1491771330 source:/home/ed/Documents/GUI-Project/GameLogic/src/Arena.cpp
 	"Arena.h"
 
-1491187240 /home/ed/Documents/GUI-Project/GameLogic/include/Arena.h
+1491615770 /home/ed/Documents/GUI-Project/GameLogic/include/Arena.h
+	<Bakery.h>
 	<vector>
 	<algorithm>
 	<BlackHat.h>
@@ -22,19 +23,20 @@
 	<Cell.h>
 	<iostream>
 
-1491168928 /home/ed/Documents/GUI-Project/GameLogic/include/Cell.h
+1491611430 /home/ed/Documents/GUI-Project/GameLogic/include/Cell.h
 	<iostream>
-	<Object.h>
+	<Actor.h>
 
-1490558428 source:/home/ed/Documents/GUI-Project/GameLogic/src/Bakery.cpp
+1491616042 source:/home/ed/Documents/GUI-Project/GameLogic/src/Bakery.cpp
 	"Bakery.h"
 
-1490558428 /home/ed/Documents/GUI-Project/GameLogic/include/Bakery.h
+1491747547 /home/ed/Documents/GUI-Project/GameLogic/include/Bakery.h
+	<iostream>
 
 1491088619 source:/home/ed/Documents/GUI-Project/GameLogic/src/BlackHat.cpp
 	"BlackHat.h"
 
-1491161311 source:/home/ed/Documents/GUI-Project/GameLogic/src/Cell.cpp
+1491611430 source:/home/ed/Documents/GUI-Project/GameLogic/src/Cell.cpp
 	"Cell.h"
 
 1490558405 source:/home/ed/Documents/GUI-Project/GameLogic/src/Cop.cpp
@@ -47,10 +49,10 @@
 
 1490558377 /home/ed/Documents/GUI-Project/GameLogic/include/WhiteHat.h
 
-1491170166 source:/home/ed/Documents/GUI-Project/GameLogic/src/Actor.cpp
+1491613872 source:/home/ed/Documents/GUI-Project/GameLogic/src/Actor.cpp
 	"Actor.h"
 
-1491159998 /home/ed/Documents/GUI-Project/GameLogic/include/Actor.h
+1491746754 /home/ed/Documents/GUI-Project/GameLogic/include/Actor.h
 	<string>
 	"Object.h"
 	<iostream>
@@ -60,6 +62,6 @@
 	<time.h>
 	<Object.h>
 
-1491161231 source:/home/ed/Documents/GUI-Project/GameLogic/src/Object.cpp
+1491234784 source:/home/ed/Documents/GUI-Project/GameLogic/src/Object.cpp
 	"Object.h"
 

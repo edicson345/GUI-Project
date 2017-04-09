@@ -1,6 +1,7 @@
 #ifndef ARENA_H
 #define ARENA_H
 
+#include <Bakery.h>
 #include <vector>
 #include <algorithm>
 #include <BlackHat.h>
@@ -15,14 +16,17 @@ using namespace std;
 
 class Arena
 {
+
     public:
+        Bakery Gilberts;
         Arena();
         Arena(int x, int y, int z);
         void emptyArena();
         void placeBlackHats(int numToPlace);
         void placeWhiteHats(int numToPlace);
         void placeCops(int numToPlace);
-        void printAllLocations();
+        void tick();
+        bool isSafe(int x, int y, int z);
         virtual ~Arena();
 
     protected:
@@ -39,7 +43,8 @@ class Arena
         int blackHats;
         int whiteHats;
         int cops;
-        int bakeries;
+
+
 
 };
 

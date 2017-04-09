@@ -2,27 +2,23 @@
 #define CELL_H
 
 #include <iostream>
-#include <Object.h>
+#include <Actor.h>
 
 class Cell
 {
     public:
         Cell();
-        Cell(int a, int b, Object* object);
-        Cell(int a, int b);
-        Object* getUnit();
-        void placeUnit(Object* object);
+        Actor* getUnit();
+        void placeUnit(Actor* actor);
+        void vacateCell();
         bool isEmpty();
-        int getX();
-        int getY();
         ~Cell();
 
     protected:
 
     private:
-        int x, y;
         bool vacant = true;
-        Object* unit;
+        Actor* unit;
 };
 
 #endif // CELL_H

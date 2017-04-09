@@ -9,6 +9,12 @@ int main()
     a->placeBlackHats(3);
     a->placeWhiteHats(3);
     a->placeCops(3);
-    a->printAllLocations();
+    for(int n = 0; n < 1000; n++)
+        a->tick();
+
+    if(!a->Gilberts.isOpen())
+        cout << "WhiteHats win" << endl;
+    else
+        cout << "BlackHats win" << endl;
     a->emptyArena();
 }

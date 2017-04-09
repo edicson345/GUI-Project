@@ -37,20 +37,12 @@
 		<Unit filename="include/Actor.h" />
 		<Unit filename="include/Arena.h" />
 		<Unit filename="include/Bakery.h" />
-		<Unit filename="include/BlackHat.h" />
 		<Unit filename="include/Cell.h" />
-		<Unit filename="include/Cop.h" />
-		<Unit filename="include/Object.h" />
-		<Unit filename="include/WhiteHat.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Actor.cpp" />
 		<Unit filename="src/Arena.cpp" />
 		<Unit filename="src/Bakery.cpp" />
-		<Unit filename="src/BlackHat.cpp" />
 		<Unit filename="src/Cell.cpp" />
-		<Unit filename="src/Cop.cpp" />
-		<Unit filename="src/Object.cpp" />
-		<Unit filename="src/WhiteHat.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />
