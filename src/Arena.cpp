@@ -115,11 +115,11 @@ void Arena::tick()
                 z += (rand() % 3) - 1;
                 if((isSafe(x, y, z)))
                 {
-                    allActors[i]->printPosition();
+                    //allActors[i]->printPosition();
                     cells[x1][y1][z1].vacateCell();
                     cells[x][y][z].placeUnit(allActors[i]);
                     allActors[i]->setPosition(x, y, z);
-                    allActors[i]->printPosition();
+                    //allActors[i]->printPosition();
                     moved = true;
                 }
                 else
@@ -141,21 +141,21 @@ void Arena::tick()
                 z += (rand() % 3) - 1;
                 if(x == 0 && (isSafe(dimensionX-1, y, z)) && cells[dimensionX-1][y][z].isEmpty())
                 {
-                    allActors[i]->printPosition();
+                    //allActors[i]->printPosition();
                     cells[x1][y1][z].vacateCell();
                     cells[dimensionX-1][y][z].placeUnit(allActors[i]);
                     allActors[i]->setPosition(dimensionX-1, y, z);
-                    allActors[i]->printPosition();
+                    //allActors[i]->printPosition();
                     Gilberts.takeDamage(5);
                     moved = true;
                 }
                 else if(isSafe(x, y, z))
                 {
-                    allActors[i]->printPosition();
+                    //allActors[i]->printPosition();
                     cells[x1][y1][z1].vacateCell();
                     cells[x][y][z].placeUnit(allActors[i]);
                     allActors[i]->setPosition(x, y, z);
-                    allActors[i]->printPosition();
+                    //allActors[i]->printPosition();
                     moved = true;
                 }
                 else
@@ -176,11 +176,11 @@ void Arena::tick()
                 z += (rand() % 3) - 1;
                 if((isSafe(x, y, z)))
                 {
-                    allActors[i]->printPosition();
+                    //allActors[i]->printPosition();
                     cells[x1][y1][z1].vacateCell();
                     cells[x][y][z].placeUnit(allActors[i]);
                     allActors[i]->setPosition(x, y, z);
-                    allActors[i]->printPosition();
+                    //allActors[i]->printPosition();
                     moved = true;
                 }
                 else
@@ -241,5 +241,5 @@ void Arena::emptyArena()
 
 Arena::~Arena()
 {
-    //dtor
+    emptyArena();
 }

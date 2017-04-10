@@ -18,6 +18,7 @@ class Arena
 {
 
     public:
+        std::vector<Actor*> blackHatList;
         Bakery Gilberts;
         Arena();
         Arena(int x, int y, int z);
@@ -28,18 +29,21 @@ class Arena
         void tick();
         bool isSafe(int x, int y, int z);
         virtual ~Arena();
+        int dimensionX, dimensionY, dimensionZ;
+        Cell*** cells;
+        std::vector<Actor*> copList;
 
     protected:
 
     private:
         std::vector<Actor*> allActors;
         std::queue<Actor*> runningQueue;
-        int dimensionX, dimensionY, dimensionZ;
-        std::vector<Actor*> blackHatList;
+
+
         std::vector<Actor*> whiteHatList;
-        std::vector<Actor*> copList;
+
         static Arena* arena;
-        Cell*** cells;
+
         int blackHats;
         int whiteHats;
         int cops;
