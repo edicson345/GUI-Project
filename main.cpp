@@ -10,9 +10,9 @@ int main()
 {
     vector<Actor*> players;
     Arena *a = new Arena(10, 10, 10);
-    a->placeBlackHats(0);
-    a->placeWhiteHats(0);
-    a->placeCops(1);
+    a->placeBlackHats(3);
+    a->placeWhiteHats(3);
+    a->placeCops(3);
 
     int x, y, z;
     x = a->dimensionX;
@@ -21,7 +21,7 @@ int main()
     int cnt = 0;
 
 
-    while(cnt < 10)
+    while(cnt < 26 && !a->Gilberts.isOpen())
     {
 
     a->tick();
@@ -51,5 +51,9 @@ int main()
     cnt++;
     }
 
+    if(!a->Gilberts.isOpen())
+        cout << "WhiteHats win" << endl;
+    else
+        cout << "BlackHats win" << endl;
     a->emptyArena();
 }

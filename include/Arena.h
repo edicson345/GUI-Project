@@ -38,8 +38,8 @@ class Arena
     private:
         std::vector<Actor*> allActors;
         std::queue<Actor*> runningQueue;
-
-
+        void scan(int x, int y, int z);
+        bool isSafe2d(int x, int y, int z);
         std::vector<Actor*> whiteHatList;
 
         static Arena* arena;

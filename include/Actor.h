@@ -23,6 +23,7 @@ class Actor
         void printPosition();
         void setPosition(int x, int y, int z);
         virtual ~Actor();
+        bool outOfPlay = false;
 
     protected:
 
@@ -30,7 +31,7 @@ class Actor
         int IDnum;//0 for blackhats 1 for whitehats 2 for cops
 
         static int cnt;
-        bool outOfPlay = false;
+
 
 };
 

@@ -29,6 +29,11 @@ bool Arena::isSafe(int x, int y, int z)
     return (x >= 0 && x < dimensionX && y >= 0 && y < dimensionY && z >= 0 && z < dimensionZ && cells[x][y][z].isEmpty());
 }
 
+bool Arena::isSafe2d(int x, int y, int z)
+{
+    return (x >= 0 && x < dimensionX && y >= 0 && y < dimensionY && z >= 0 && z < dimensionZ);
+}
+
 void Arena::placeBlackHats(int numToPlace)
 {
     blackHats = numToPlace;
@@ -115,6 +120,7 @@ void Arena::tick()
                 z += (rand() % 3) - 1;
                 if((isSafe(x, y, z)))
                 {
+                    scan(x1, y1, z1);
                     //allActors[i]->printPosition();
                     cells[x1][y1][z1].vacateCell();
                     cells[x][y][z].placeUnit(allActors[i]);
@@ -141,17 +147,26 @@ void Arena::tick()
                 z += (rand() % 3) - 1;
                 if(x == 0 && (isSafe(dimensionX-1, y, z)) && cells[dimensionX-1][y][z].isEmpty())
                 {
-                    //allActors[i]->printPosition();
+                    if(allActors[i]->outOfPlay)
+                    {
+                        allActors[i]->outOfPlay = false;
+                        continue;
+                    }
+
                     cells[x1][y1][z].vacateCell();
                     cells[dimensionX-1][y][z].placeUnit(allActors[i]);
                     allActors[i]->setPosition(dimensionX-1, y, z);
-                    //allActors[i]->printPosition();
+
                     Gilberts.takeDamage(5);
                     moved = true;
                 }
                 else if(isSafe(x, y, z))
                 {
-                    //allActors[i]->printPosition();
+                    if(allActors[i]->outOfPlay)
+                    {
+                        allActors[i]->outOfPlay = false;
+                        continue;
+                    }
                     cells[x1][y1][z1].vacateCell();
                     cells[x][y][z].placeUnit(allActors[i]);
                     allActors[i]->setPosition(x, y, z);
@@ -176,7 +191,11 @@ void Arena::tick()
                 z += (rand() % 3) - 1;
                 if((isSafe(x, y, z)))
                 {
-                    //allActors[i]->printPosition();
+                    if(allActors[i]->outOfPlay)
+                    {
+                        allActors[i]->outOfPlay = false;
+                        continue;
+                    }
                     cells[x1][y1][z1].vacateCell();
                     cells[x][y][z].placeUnit(allActors[i]);
                     allActors[i]->setPosition(x, y, z);
@@ -222,6 +241,22 @@ void Arena::placeCops(int numToPlace)
             }
         }
     }
+}
+
+void Arena::scan(int x, int y, int z)
+{
+    int row[] = {-1,-1,-1,0,0,1,1,1};
+    int col[] = {-1,0,1,-1,1,-1,0,1};
+
+    for(int i = 0; i < 8; i++)
+        if(isSafe2d(x + row[i], y + col[i], z))
+            if(!cells[x+row[i]][y + col[i]][z].isEmpty())
+            {
+                Actor *a = cells[x+row[i]][y + col[i]][z].getUnit();
+                if(a->ID != "Cop")
+                    a->outOfPlay = true;
+            }
+
 }
 
 void Arena::emptyArena()
