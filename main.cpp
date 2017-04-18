@@ -9,7 +9,7 @@ using namespace std;
 int main()
 {
     vector<Actor*> players;
-    Arena *a = new Arena(10, 10, 10);
+    Arena *a = new Arena(500, 500, 10);
     a->placeBlackHats(3);
     a->placeWhiteHats(3);
     a->placeCops(3);

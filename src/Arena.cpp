@@ -46,10 +46,10 @@ void Arena::placeBlackHats(int numToPlace)
         while(!placed)
         {
             x = dimensionX - 1;
-            y = rand() % dimensionY;
+            y = rand() % (dimensionY/2) + (dimensionY/2);
             z = rand() % dimensionZ;
 
-            if(cells[x][y][z].isEmpty())
+            if(isSafe(x,y,z))
             {
                 cells[x][y][z].placeUnit(new Actor(x,y,z, "BlackHat", 0));
                 Actor *a = cells[x][y][z].getUnit();
@@ -71,11 +71,11 @@ void Arena::placeWhiteHats(int numToPlace)
         bool placed = false;
         while(!placed)
         {
-            x = rand() % dimensionX;
-            y = rand() % dimensionY;
+            x = rand() % dimensionX + dimensionX*(0.1);
+            y = rand() % (dimensionY/2) + (dimensionY/2);
             z = rand() % dimensionZ;
 
-            if(cells[x][y][z].isEmpty())
+            if(isSafe(x,y,z))
             {
                 cells[x][y][z].placeUnit(new Actor(x,y,z, "WhiteHat", 1));
                 Actor *a = cells[x][y][z].getUnit();
@@ -228,8 +228,8 @@ void Arena::placeCops(int numToPlace)
         bool placed = false;
         while(!placed)
         {
-            x = rand() % dimensionX;
-            y = rand() % dimensionY;
+            x = rand() % dimensionX + dimensionX*(0.1);
+            y = rand() % (dimensionY/2) + (dimensionY/2);
             z = rand() % dimensionZ;
 
             if(cells[x][y][z].isEmpty())
